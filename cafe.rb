@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-require 'debug'
 
 DRINKS = [
   { name: 'コーヒー', price: '300' },
@@ -26,11 +25,10 @@ def take_order(menus)
 end
 
 puts 'bugカフェへようこそ！ご注文は？ 番号でどうぞ'
-order1 = take_order(DRINKS)
+order_for_drink = take_order(DRINKS)
 
 puts 'フードメニューはいかがですか?'
-order2 = take_order(FOODS)
+order_for_food = take_order(FOODS)
 
-total = FOODS[order1][:price].to_i + DRINKS[order2][:price].to_i
+total = FOODS[order_for_food][:price].to_i + DRINKS[order_for_drink][:price].to_i
 puts "お会計は#{total}円になります。ありがとうございました！"
-
